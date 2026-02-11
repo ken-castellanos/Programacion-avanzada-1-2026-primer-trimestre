@@ -1,0 +1,60 @@
+package Dominio;
+
+import java.util.Objects;
+
+public class Pelicula {
+    private String nombre;
+
+    //boob has algo
+    public Pelicula() {}
+
+    public Pelicula(String nombre)
+    {
+        this.nombre = nombre;
+    }
+
+    public String getNombre()
+    {
+        return nombre;
+    }
+
+    public void setNombre(String nombre)
+    {
+        this.nombre = nombre;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Pelicula pelicula = (Pelicula) o;
+        return Objects.equals(nombre, pelicula.nombre);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(nombre);
+    }
+
+    //@Override
+    //public String toString() {
+        //return "Pelicula{" +
+                //"nombre= '" + nombre + '\'' +
+                //'}';
+    //}
+
+    @Override
+    public String toString()
+    {
+        return nombre;
+    }
+
+    public static void main(String[] args)
+    {
+        var pelicula1 = new Pelicula ("Ted");
+        var pelicula2 = new Pelicula ("Ponga cualquier nombre");
+        System.out.println(pelicula1);
+        System.out.println(pelicula2);
+
+    }
+}
